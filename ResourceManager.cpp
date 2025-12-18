@@ -25,8 +25,11 @@ Resource *ResourceManager::findById(int id)
 
 void ResourceManager::printReport() const
 {
-    cout << "===== SYSTEM REPORT =====\n";
-    cout << "Total: " << totalResources << " resources\n\n";
+    cout << "System Log" << endl;
+    cout << "Total: " << totalResources << " resources" << endl
+         << endl;
     for (const auto &r : resources)
+    {
         r.printSchedule();
+    }
 }

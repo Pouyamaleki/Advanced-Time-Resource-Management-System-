@@ -7,35 +7,6 @@
 
 using namespace std;
 
-class Resource
-{
-private:
-    int id;
-    string name;
-    vector<TimeInterval> intervals;
-
-public:
-    Resource(int _id = 0, string _name = "");
-    int getId() const;
-    const string &getName() const;
-    bool hasConflict(const TimeInterval &) const;
-    bool addInterval(const TimeInterval &);
-    void normalize();
-    void printSchedule() const;
-};
-
-class ResourceManager
-{
-private:
-    vector<Resource> resources;
-
-public:
-    static int totalResources;
-    void addResource(const Resource &r);
-    Resource *findById(int id);
-    void printReport() const;
-};
-
 class Time
 {
 private:
@@ -67,6 +38,34 @@ public:
     string toString() const;
 };
 
+class Resource
+{
+private:
+    int id;
+    string name;
+    vector<TimeInterval> intervals;
+
+public:
+    Resource(int _id = 0, string _name = "");
+    int getId() const;
+    const string &getName() const;
+    bool hasConflict(const TimeInterval &) const;
+    bool addInterval(const TimeInterval &);
+    void normalize();
+    void printSchedule() const;
+};
+
+class ResourceManager
+{
+private:
+    vector<Resource> resources;
+
+public:
+    static int totalResources;
+    void addResource(const Resource &r);
+    Resource *findById(int id);
+    void printReport() const;
+};
 
 void bubbleSort(vector<TimeInterval> &arr);
 
