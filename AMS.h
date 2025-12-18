@@ -7,8 +7,6 @@
 
 using namespace std;
 
-void bubbleSort(vector<TimeInterval> &arr);
-
 class ResourceManager
 {
 private:
@@ -46,9 +44,9 @@ public:
     bool contiguous(const TimeInterval &) const;
     int duration() const;
     bool merge(const TimeInterval &, TimeInterval &) const;
-    TimeInterval operator+(const TimeInterval &) const;
     bool operator<(const TimeInterval &) const;
     bool operator==(const TimeInterval &) const;
+    TimeInterval operator+(const TimeInterval &) const;
     string toString() const;
 };
 
@@ -68,5 +66,7 @@ public:
     void normalize();
     void printSchedule() const;
 };
+
+void bubbleSort(vector<TimeInterval> &arr);
 
 #endif
