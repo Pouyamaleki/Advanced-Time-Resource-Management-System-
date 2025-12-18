@@ -32,7 +32,7 @@ bool TimeInterval::merge(const TimeInterval &o, TimeInterval &out) const
         return false;
     }
     Time s = (o.start < start ? o.start : start);
-    Time e = (o.end < end ? end : o.end);
+    Time e = (end < o.end ? o.end : end);
     out = TimeInterval(s, e);
     return true;
 }
